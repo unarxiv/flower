@@ -25,7 +25,7 @@ class Flower(tornado.web.Application):
     max_workers = 4
 
     def __init__(self, options=None, capp=None, events=None,
-                 io_loop=None, **kwargs):
+                 io_loop=None, handlers=handlers, **kwargs):
         kwargs.update(handlers=handlers)
         super(Flower, self).__init__(**kwargs)
         self.options = options or default_options
